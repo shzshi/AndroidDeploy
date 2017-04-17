@@ -25,7 +25,7 @@ node {
   echo "My branch is: ${env.BRANCH_NAME}"
 
   //build your gradle flavor, passes the current build number as a parameter to gradle
-  sh ".gradle clean assemble"
+  sh './gradlew clean build assemble'
 
   stage 'Stage Archive'
   //tell Jenkins to archive the apks
