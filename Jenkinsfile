@@ -34,8 +34,9 @@ node {
   stage ('Stage Archive') {
   //tell Jenkins to archive the apks
   archiveArtifacts artifacts: 'app/build/outputs/apk/*.apk', fingerprint: true
+  }
 
-  stage 'Stage Upload To Fabric'
+  stage ('Stage Upload To Fabric') {
   sh "gradle crashlyticsUploadDistribution${flavor}Debug  -PBUILD_NUMBER=${env.BUILD_NUMBER}"
   }
 }
