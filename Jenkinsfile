@@ -23,7 +23,7 @@ node {
   stage ('Stage Build') {
 
   //branch name from Jenkins environment variables
-  echo "My branch is: ${env.BRANCH_NAME}"
+  echo "My branch is: ${BRANCH_NAME}"
   
   echo "My SDK version is: ${env.PATH} and ${env.ANDROID_HOME}"
 
@@ -37,6 +37,6 @@ node {
   }
 
   stage ('Stage Upload To Fabric') {
-  sh './gradlew crashlyticsUploadDistribution${flavor}Debug  -PBUILD_NUMBER=${env.BUILD_NUMBER}'
+  sh './gradlew crashlyticsUploadDistribution${flavor}Debug  -PBUILD_NUMBER=${BUILD_NUMBER}'
   }
 }
