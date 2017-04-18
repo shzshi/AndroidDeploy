@@ -37,6 +37,6 @@ node {
   }
 
   stage ('Stage Upload To Fabric') {
-  sh "gradle crashlyticsUploadDistribution${flavor}Debug  -PBUILD_NUMBER=${env.BUILD_NUMBER}"
+  sh './gradlew crashlyticsUploadDistribution${env.flavor}Debug  -PBUILD_NUMBER=${env.BUILD_NUMBER}'
   }
 }
