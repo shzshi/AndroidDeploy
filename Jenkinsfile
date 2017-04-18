@@ -28,7 +28,7 @@ node {
   echo "My SDK version is: ${env.PATH} and ${env.ANDROID_HOME}"
 
   //build your gradle flavor, passes the current build number as a parameter to gradle
-  sh 'chmod +x gradlew; ./gradlew clean build assemble'
+  sh 'chmod +x gradlew; ./gradlew clean assemble'
   }
 
   stage ('Stage Archive') {
