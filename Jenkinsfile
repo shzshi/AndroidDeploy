@@ -25,7 +25,7 @@ node {
   //branch name from Jenkins environment variables
   echo "My branch is: ${env.BRANCH_NAME}"
   
-  echo "My SDK version is: $ANDROID_HOME"
+  echo "My SDK version is: ${env.PATH} and ${env.ANDROID_HOME}"
 
   //build your gradle flavor, passes the current build number as a parameter to gradle
   sh 'chmod +x gradlew; ./gradlew clean build assemble'
